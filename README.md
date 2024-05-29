@@ -1,1 +1,2 @@
 # Steps for Deploying the Entire Flow
+I started off by creating a directory for the two files for the static website. The files created were index.html and style.css. I went to ChatGPT and asked it to give me HTML and CSS code for a static website for a company that provides a weather application. I also asked it to give me a company name, include an About Us section, and talk about some of the features of the weather application. I copied the code provided by ChatGPT and added it to the relevant files. 
