@@ -5,9 +5,9 @@ I then staged the project directory to the Git repository and set the Git global
 
 After that, I created a dockerfile outside the 'src' directory, with nginx as the base image, set the nginx working directory, and copied the 'src' folder into the working directory so the web server could access the relevant files and opened it to port 80. I then built the image using the command "docker build -t dockerfile ." and ran the image using the command "docker run -p 8080 80 dockerfile" and opened it to port 8080 and accessed it on localhost to check if everything worked and looks proper and if any changes needed to happen. 
 
-After confirming the website and the dockerfile are configured properly, it's time to push the dockerfile to the docker hub. I used the command "docker tag <your-image-name> <your-dockerhub-username>/<your-repository-name>:<tag>" to tag the image with a name 
+After confirming the website and the dockerfile are configured properly, it's time to push the dockerfile to the docker hub. I used the command "docker tag <your-image-name> <your-dockerhub-username>/<your-repository-name>:<tag>" to tag the image with a name, docker username, repository name and version. Then I used the command "docker login -u <username>" to log into the docker hub and it asked for my password and logged me in. I used the command "docker push <your-dockerhub-username>/<your-repository-name>:<tag>" to push the image to the docker hub and went to the docker hub on my browser to confirm the image was successfully pushed to the docker hub.
 
-"docker login -u <username>" and it asked for my password and logged me in. Then I used the command "docker tag <your-image-name> <your-dockerhub-username>/<your-repository-name>:<tag>" 
+Then I had to install the Kind tool that runs kubernetes clusters on the local environment using docker. I then created a cluster using "kind create cluster" and then started creating kuberneted Deployment YAML file which specified the image, which was the one I pushed to the docker hub, I also specified the number of replicas for the deployment. 
 
 # Troubleshooting and Challenges: Solutions and Workarounds
 
